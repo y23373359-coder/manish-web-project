@@ -1,0 +1,438 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TripVista - Travel & Tour Packages</title>
+  <link rel="stylesheet" href="style3.css">
+  <script src="index.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a href="#" class="logo">
+      <span>✈</span> Trip<span>Vista</span>
+    </a>
+
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#packages">Packages</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <a href="#packages" class="nav-btn">Explore Trips</a>
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content container">
+    <span class="hero-tag">✦ Explore • Dream • Travel</span>
+
+    <h1>Make Your Next<br><span>Journey Unforgettable</span></h1>
+
+    <p>
+      Discover beautiful destinations, exciting tour packages,
+      and unforgettable experiences across India.
+    </p>
+
+    <div class="search-box">
+
+      <div class="search-item">
+        <span>📍</span>
+        <div>
+          <small>Where to?</small>
+          <select id="destinationSelect">
+            <option value="all">All Destinations</option>
+            <option value="himachal">Himachal Pradesh</option>
+            <option value="kashmir">Kashmir</option>
+            <option value="goa">Goa</option>
+            <option value="rajasthan">Rajasthan</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="search-item">
+        <span>💰</span>
+        <div>
+          <small>Budget</small>
+          <select id="budgetSelect">
+            <option value="all">Any Budget</option>
+            <option value="10000">Under ₹10,000</option>
+            <option value="25000">Under ₹25,000</option>
+            <option value="50000">Under ₹50,000</option>
+          </select>
+        </div>
+      </div>
+
+      <button onclick="searchPackages()" class="search-btn">
+        Search Trips
+      </button>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container stats-grid">
+    <div>
+      <strong>50+</strong>
+      <span>Destinations</span>
+    </div>
+
+    <div>
+      <strong>120+</strong>
+      <span>Tour Packages</span>
+    </div>
+
+    <div>
+      <strong>10K+</strong>
+      <span>Happy Travellers</span>
+    </div>
+
+    <div>
+      <strong>4.9/5</strong>
+      <span>Traveller Rating</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- DESTINATIONS -->
+<section class="section" id="destinations">
+  <div class="container">
+
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">DISCOVER INDIA</span>
+        <h2>Popular Destinations</h2>
+      </div>
+
+      <p>
+        From snow-covered mountains to tropical beaches,
+        find your perfect escape.
+      </p>
+    </div>
+
+    <div class="destination-grid">
+
+      <article class="destination-card large">
+        <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80">
+        <div class="destination-info">
+          <span>🏔️ Mountain Escape</span>
+          <h3>Himachal Pradesh</h3>
+          <p>Manali • Shimla • Kasol</p>
+        </div>
+      </article>
+
+      <article class="destination-card">
+        <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=80">
+        <div class="destination-info">
+          <span>❄️ Paradise</span>
+          <h3>Kashmir</h3>
+          <p>Srinagar • Gulmarg</p>
+        </div>
+      </article>
+
+      <article class="destination-card">
+        <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=80">
+        <div class="destination-info">
+          <span>🌴 Beach Life</span>
+          <h3>Goa</h3>
+          <p>Beaches • Nightlife</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PACKAGES -->
+<section class="section packages-section" id="packages">
+  <div class="container">
+
+    <div class="section-heading center">
+      <span class="eyebrow">BEST SELLERS</span>
+      <h2>Featured Tour Packages</h2>
+      <p>Handpicked trips for your next unforgettable adventure.</p>
+    </div>
+
+    <div class="filter-buttons">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="himachal">Himachal</button>
+      <button class="filter" data-filter="kashmir">Kashmir</button>
+      <button class="filter" data-filter="goa">Goa</button>
+      <button class="filter" data-filter="rajasthan">Rajasthan</button>
+    </div>
+
+    <div class="package-grid" id="packageGrid">
+
+      <article class="package-card" data-category="himachal" data-price="14999">
+        <div class="package-image">
+          <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=900&q=80">
+          <span class="badge">Popular</span>
+          <button class="heart">♡</button>
+        </div>
+
+        <div class="package-content">
+          <span class="location">📍 Manali, Himachal</span>
+          <h3>Magical Manali Escape</h3>
+          <p>Experience mountains, valleys, rivers and beautiful local culture.</p>
+
+          <div class="package-meta">
+            <span>🕒 5 Days / 4 Nights</span>
+            <span>⭐ 4.9</span>
+          </div>
+
+          <div class="package-bottom">
+            <div>
+              <small>Starting from</small>
+              <strong>₹14,999</strong>
+              <small>/ person</small>
+            </div>
+            <button onclick="bookTrip('Magical Manali Escape')">View Trip</button>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="package-card" data-category="kashmir" data-price="22999">
+        <div class="package-image">
+          <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=80">
+          <span class="badge">Best Value</span>
+          <button class="heart">♡</button>
+        </div>
+
+        <div class="package-content">
+          <span class="location">📍 Kashmir</span>
+          <h3>Kashmir Paradise Tour</h3>
+          <p>Explore Srinagar, Gulmarg and the breathtaking Himalayan landscape.</p>
+
+          <div class="package-meta">
+            <span>🕒 6 Days / 5 Nights</span>
+            <span>⭐ 4.8</span>
+          </div>
+
+          <div class="package-bottom">
+            <div>
+              <small>Starting from</small>
+              <strong>₹22,999</strong>
+              <small>/ person</small>
+            </div>
+            <button onclick="bookTrip('Kashmir Paradise Tour')">View Trip</button>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="package-card" data-category="goa" data-price="11999">
+        <div class="package-image">
+          <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=80">
+          <span class="badge">Trending</span>
+          <button class="heart">♡</button>
+        </div>
+
+        <div class="package-content">
+          <span class="location">📍 Goa</span>
+          <h3>Goa Beach Getaway</h3>
+          <p>Relax on beautiful beaches and enjoy Goa's unforgettable nightlife.</p>
+
+          <div class="package-meta">
+            <span>🕒 4 Days / 3 Nights</span>
+            <span>⭐ 4.7</span>
+          </div>
+
+          <div class="package-bottom">
+            <div>
+              <small>Starting from</small>
+              <strong>₹11,999</strong>
+              <small>/ person</small>
+            </div>
+            <button onclick="bookTrip('Goa Beach Getaway')">View Trip</button>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="package-card" data-category="rajasthan" data-price="18999">
+        <div class="package-image">
+          <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=80">
+          <span class="badge">Culture</span>
+          <button class="heart">♡</button>
+        </div>
+
+        <div class="package-content">
+          <span class="location">📍 Rajasthan</span>
+          <h3>Royal Rajasthan Journey</h3>
+          <p>Discover royal palaces, forts, deserts and colourful culture.</p>
+
+          <div class="package-meta">
+            <span>🕒 6 Days / 5 Nights</span>
+            <span>⭐ 4.9</span>
+          </div>
+
+          <div class="package-bottom">
+            <div>
+              <small>Starting from</small>
+              <strong>₹18,999</strong>
+              <small>/ person</small>
+            </div>
+            <button onclick="bookTrip('Royal Rajasthan Journey')">View Trip</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- WHY US -->
+<section class="why-us" id="why-us">
+  <div class="container">
+
+    <div class="section-heading center">
+      <span class="eyebrow">WHY TRIPVISTA</span>
+      <h2>Travel Made Simple</h2>
+      <p>Everything you need for a stress-free journey.</p>
+    </div>
+
+    <div class="benefits">
+
+      <div class="benefit">
+        <div class="benefit-icon">💎</div>
+        <h3>Best Price</h3>
+        <p>Get amazing trips at competitive and transparent prices.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">🛡️</div>
+        <h3>Safe & Secure</h3>
+        <p>Your comfort and safety are our top priorities.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">🤝</div>
+        <h3>Expert Support</h3>
+        <p>Our travel experts are available whenever you need help.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">✨</div>
+        <h3>Unique Experiences</h3>
+        <p>Discover experiences that make your trip truly memorable.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="container cta-content">
+    <div>
+      <span class="eyebrow">START YOUR JOURNEY</span>
+      <h2>Where will you go next?</h2>
+      <p>Tell us your dream destination and we'll help you plan it.</p>
+    </div>
+
+    <button onclick="openContact()">Plan My Trip →</button>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-grid">
+
+    <div>
+      <a href="#" class="logo footer-logo">
+        <span>✈</span> Trip<span>Vista</span>
+      </a>
+      <p>
+        Creating unforgettable travel experiences,
+        one journey at a time.
+      </p>
+    </div>
+
+    <div>
+      <h4>Explore</h4>
+      <a href="#destinations">Destinations</a>
+      <a href="#packages">Packages</a>
+      <a href="#why-us">Why Us</a>
+    </div>
+
+    <div>
+      <h4>Popular</h4>
+      <a href="#">Himachal Pradesh</a>
+      <a href="#">Kashmir</a>
+      <a href="#">Goa</a>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <a href="mailto:hello@tripvista.com">hello@tripvista.com</a>
+      <a href="tel:+919999999999">+91 99999 99999</a>
+      <a href="#">India</a>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 TripVista. All Rights Reserved.
+  </div>
+</footer>
+
+
+<!-- MODAL -->
+<div class="modal" id="contactModal">
+  <div class="modal-box">
+
+    <button class="close-modal" onclick="closeContact()">×</button>
+
+    <span class="eyebrow">PLAN YOUR TRIP</span>
+    <h2>Let's plan your dream vacation ✈️</h2>
+
+    <form id="tripForm">
+
+      <input type="text" placeholder="Your Name" required>
+
+      <input type="email" placeholder="Email Address" required>
+
+      <input type="tel" placeholder="Phone Number" required>
+
+      <select required>
+        <option value="">Choose Destination</option>
+        <option>Himachal Pradesh</option>
+        <option>Kashmir</option>
+        <option>Goa</option>
+        <option>Rajasthan</option>
+      </select>
+
+      <textarea placeholder="Tell us about your trip..." rows="4"></textarea>
+
+      <button type="submit">Send Enquiry →</button>
+
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
